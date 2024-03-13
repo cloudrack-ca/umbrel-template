@@ -5,7 +5,7 @@ services:
     image: plesk/plesk
     command: ["/bin/bash"]
     volumes:
-      - ${APP_DATA_DIR}/sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /${APP_DATA_DIR}/sys/fs/cgroup:/sys/fs/cgroup:ro
     ports:
       - "80:80"
     tmpfs:
@@ -16,7 +16,6 @@ services:
        APP_HOST: cloudrack-plesk_1
        APP_PORT: 8880
        TITLE: cloudrack-plesk
-       CONTAINER_NAME: name
     ports:
       - '8540:80'
       - '4463:443'
@@ -26,4 +25,4 @@ services:
       - '3332:21'
       - '3844:3306'
     volumes:
-      - ${APP_DATA_DIR}/sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /${APP_DATA_DIR}/sys/fs/cgroup:/sys/fs/cgroup:ro
